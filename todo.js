@@ -13,7 +13,7 @@ function saveToDos(){
 function deleteToDo(event){
     const li = event.target.parentElement;
     li.remove();
-    toDos = toDos.filter((toDo) => toDo.id != parseInt(li.id));
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     saveToDos();
 }
 
@@ -39,7 +39,7 @@ function handleToDoSubmit(event){
         id: Date.now(),
     }
     toDos.push(newToDoObj);
-    paintToDo(newToDo);
+    paintToDo(newToDoObj);
     saveToDos();
 };
 
